@@ -13,8 +13,19 @@ App({
         env: 'database-staw6',
         traceUser: true,
       })
+      
     }
+    
+    this.globalData = {
+      test:'333',
+      commodity:[{
+        "name":"a",
+        "amount":5,
+        "sell":2
 
-    this.globalData = {}
+      }]
+      
+
+    }
   }
 })

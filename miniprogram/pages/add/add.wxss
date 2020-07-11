@@ -1,0 +1,26 @@
+/* pages/add/add.wxss */
+page {
+  
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.6;
+  
+}
+.titstyle{
+  
+  font-size: 50rpx;
+  margin-bottom: 10rpx;
+}
+#order{
+  height: 100%;
+  text-align: center;
+}
+#store{
+  height: 100%;
+  text-align: center;
+  background-color: aqua;
+}
+swiper{
+  height: 80%;
+}
+

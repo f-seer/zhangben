@@ -1,0 +1,54 @@
+<!--pages/store/store.wxml-->
+<text>pages/store/store.wxml</text>
+<view id="store">
+      <text class="titstyle">
+                添加商品
+      </text>
+      <form catchsubmit="formSubmit" catchreset="formReset">
+        <view class="page-section">
+          <view class="page-section-title">商品名称</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+            	<view class="weui-cell__bd" style="margin: 30rpx 0" >
+              	<input  class="weui-input" name="itemname" placeholder="输入商品名称" />
+              </view>
+          	</view>
+        	</view>
+					<view class="page-section-title">商品编号</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+            	<view class="weui-cell__bd" style="margin: 30rpx 0" >
+              	<input type="number" class="weui-input" name="itemnum" placeholder="输入数字" />
+              </view>
+          	</view>
+        	</view>
+					<view class="page-section-title">进货单价</view>
+					<view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+            	<view class="weui-cell__bd" style="margin: 30rpx 0" >
+              	<input type="number" class="weui-input" name="purc" placeholder="输入数字" />
+              </view>
+          	</view>
+        	</view>
+					<view class="page-section-title">默认售价</view>
+					<view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+            	<view class="weui-cell__bd" style="margin: 30rpx 0" >
+              	<input type="number" class="weui-input" name="sell" placeholder="输入数字" />
+              </view>
+          	</view>
+        	</view>
+        </view>
+				<view class="page-section-title">进货数量</view>
+					<view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+            	<view class="weui-cell__bd" style="margin: 30rpx 0" >
+              	<input type="number" class="weui-input" name="pamount" placeholder="输入数字" />
+              </view>
+          	</view>
+        	</view>
+        
+        <button style="margin:30rpx auto;" type="primary" formType="submit">Submit</button>
+        <button style="margin:30rpx auto;" formType="reset">Reset</button>
+      </form>
+    </view>

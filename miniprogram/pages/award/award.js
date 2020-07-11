@@ -1,25 +1,20 @@
-// pages/mainpage/mainpage.js
+// pages/award/award.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    info:[]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  showData: function() {
-    var Info =wx.getStorageSync('info');
-    this.setData({
-      info:Info
-    })
- },
   onLoad: function (options) {
-      this.showData()
+
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -67,10 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  gotosubmit: function(){
-    wx.navigateTo({
-      url: '../store/store',
-    })
   }
 })

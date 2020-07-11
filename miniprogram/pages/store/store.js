@@ -1,25 +1,20 @@
-// pages/mainpage/mainpage.js
+// pages/store/store.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    info:[]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  showData: function() {
-    var Info =wx.getStorageSync('info');
-    this.setData({
-      info:Info
-    })
- },
   onLoad: function (options) {
-      this.showData()
+
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -68,9 +63,24 @@ Page({
   onShareAppMessage: function () {
 
   },
-  gotosubmit: function(){
-    wx.navigateTo({
-      url: '../store/store',
+  formSubmit: function (e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    var info=e.detail.value;
+    info['sellamount']=0;
+    
+    let old=wx.getStorageSync('info') || [];
+    console.log(old)
+    old.push(info);
+    console.log(old);
+    wx.setStorage({
+      data: old,
+      key: 'info',
     })
+    wx.navigateBack({
+      delta: 0,
+    })
+  },
+  formReset: function () {
+    console.log('form发生了reset事件')
   }
 })

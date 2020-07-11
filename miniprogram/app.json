@@ -1,7 +1,13 @@
 {
   "pages": [
     "pages/mainpage/mainpage",
+    "pages/store/store",
+    "pages/award/award",
+    "pages/analyze/analyze",
+    "pages/share/share",
+    "pages/Individual/Individual",
     "pages/index/index",
+    "pages/add/add",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -15,11 +21,48 @@
     "pages/im/im",
     "pages/im/room/room"
   ],
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/mainpage/mainpage",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "货架"
+      },
+      {
+        "pagePath": "pages/award/award",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "成就"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "收银台"
+      },
+      {
+        "pagePath": "pages/analyze/analyze",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "分析"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "iconPath": "",
+        "selectedIconPath": "",
+        "text": "个人"
+      }
+
+    ]
+    
+  },
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "账本",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
