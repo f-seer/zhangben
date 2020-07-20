@@ -49,7 +49,7 @@
         "text": "分析"
       },
       {
-        "pagePath": "pages/add/add",
+        "pagePath": "pages/Individual/Individual",
         "iconPath": "",
         "selectedIconPath": "",
         "text": "个人"
