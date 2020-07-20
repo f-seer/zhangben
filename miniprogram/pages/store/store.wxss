@@ -1,1 +1,25 @@
 /* pages/store/store.wxss */
+.page__hd{
+  width: 100%;
+  height: 100rpx;
+  margin-left: 50rpx;
+  margin-bottom: 50rpx;
+}
+.page__title{
+  font-size: 26px;
+}
+.page__desc{
+  font-size: medium;
+  color:rgba(0, 0, 0, 0.6);
+}
+.page__bd{
+  width: 80%;
+  height: 60%;
+  background-color: blanchedalmond;
+  
+  border-radius: 20px;
+  margin-left:5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  padding: 5%;
+}

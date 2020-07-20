@@ -20,15 +20,27 @@ Page({
     disabled: false,
     plain: false,
     loading: false,
-    test:'222'
-
+    Index:0,
+    info:[]
+  },
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    //console.log(this.data.objectArray[e.detail.value].name)
+    this.setData({
+      Index: e.detail.value
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var old=wx.getStorageSync('info') || [];
+    this.setData({
+      info:old
+      
+    })
+    console.log(old);
   },
 
   /**
@@ -90,6 +102,8 @@ Page({
     })
     console.log(data);
     */
+   old[info.itemindex].sellamount+=info.amount;
+   /*
     for(var index in old){
       if(old[index].itemname==info.itemname)
       {
@@ -98,6 +112,7 @@ Page({
        break;
       }
     }
+    */
     wx.setStorage({
       data: old,
       key: 'info',

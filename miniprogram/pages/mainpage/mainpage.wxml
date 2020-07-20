@@ -1,8 +1,19 @@
 <!--pages/mainpage/mainpage.wxml-->
-<text>page1</text>
-<button bindtap="showData">显示</button>
-<button bindtap="gotosubmit">添加商品</button>
-<view wx:for="{{info}}" wx:for-item>
-  <view>品名{{item.itemname}},编号{{item.itemnum}},数量{{item.pamount}},进价{{item.purc}},售价{{item.sell}},售出{{item.sellamount}}</view>
-  <text>\n</text>
+<view class="page">
+  <view class="page__hd">
+        <view class="page__title">货架</view>
+        <view class="page__desc">商品信息</view>
+  </view>
+  <view class="page__bd">
+    <button bindtap="showData" type="default" class="btn">刷新</button>
+    <button bindtap="gotosubmit" type="primary" class="btn">添加商品</button>
+    <view wx:for="{{info}}" wx:for-item>
+      <view class="item__bd">
+      品名{{item.itemname}},编号{{item.itemnum}},数量{{item.pamount}},进价{{item.purc}},售价{{item.sell}},售出{{item.sellamount}}</view>
+      <text>\n</text>
+    </view>
+    </view>
+  </view>
+<view class="page__foot">
+<text class="foot__text"> __商品列表__</text>
 </view>

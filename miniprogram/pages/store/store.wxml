@@ -1,9 +1,11 @@
 <!--pages/store/store.wxml-->
-<text>pages/store/store.wxml</text>
-<view id="store">
-      <text class="titstyle">
-                添加商品
-      </text>
+
+<view class="page">
+  <view class="page__hd">
+        <view class="page__title">进货</view>
+        <view class="page__desc">添加商品</view>
+  </view>
+<view class="store page__bd">
       <form catchsubmit="formSubmit" catchreset="formReset">
         <view class="page-section">
           <view class="page-section-title">商品名称</view>
@@ -52,3 +54,4 @@
         <button style="margin:30rpx auto;" formType="reset">Reset</button>
       </form>
     </view>
+</view>

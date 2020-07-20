@@ -1,36 +1,47 @@
 <!--pages/add/add.wxml-->
-<text>pages/add/add.wxml</text>
-    <view id="order">
-      <text class="titstyle">账单</text> 
+<view class="page__hd">
+        <view class="page__title">账单</view>
+        <view class="page__desc">计账一条</view>
+</view>
+      
+      <view class="page__bd">
 			<form catchsubmit="formSubmit" catchreset="formReset">
         <view class="page-section">
-          <view class="page-section-title">名称</view>
-          <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_input">
-            	<view class="weui-cell__bd" style="margin: 30rpx 0" >
-              	<input class="weui-input" name="itemname" placeholder="这是一个输入框" />
-              </view>
-          	</view>
-        	</view>
+        <view class="page-section-title">选择商品</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__bd">
+                    <picker name="itemindex" bindchange="bindPickerChange" value="{{Index}}" range="{{info}}" range-key="itemname">
+                        <view class="weui-select" >
+                          {{info[Index].itemname}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
         </view>
         <view class="page-section">
           <view class="page-section-title">售价</view>
           <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_input">
             	<view class="weui-cell__bd" style="margin: 30rpx 0" >
-              	<input type="number" class="weui-input" name="sell" placeholder="这是一个输入框" />
+              	<input type="number" class="weui-input" name="sell" placeholder="默认价格"value="{{info[Index].sell}}" />
               </view>
           	</view>
         	</view>
         </view>
+
         <view class="page-section page-section-gap">
       	<view class="page-section-title">数量</view>
-          <slider value="5" name="amount" show-value ></slider>
+          <slider value="1" min="1" max="20" name="amount" show-value ></slider>
         </view>
-        <button style="margin:30rpx auto;" type="primary" formType="submit">Submit</button>
-        <button style="margin:30rpx auto;" formType="reset">Reset</button>
+        <button style="margin:30rpx auto;" type="primary" formType="submit">结账</button>
+        <button style="margin:30rpx auto; " type="default" formType="reset">重置</button>
       </form>
-    </view>
+      </view>
+      
+      
+   
   
   
     
