@@ -4,7 +4,7 @@
         <view class="page__desc">计账一条</view>
 </view>
       
-      <view class="page__bd">
+<view class="page__bd">
 			<form catchsubmit="formSubmit" catchreset="formReset">
         <view class="page-section">
         <view class="page-section-title">选择商品</view>
@@ -38,7 +38,7 @@
         <button style="margin:30rpx auto;" type="primary" formType="submit">结账</button>
         <button style="margin:30rpx auto; " type="default" formType="reset">重置</button>
       </form>
-      </view>
+</view>
       
       
    

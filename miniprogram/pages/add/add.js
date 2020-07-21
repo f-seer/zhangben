@@ -35,6 +35,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    /**为选择器读取数据 */
     var old=wx.getStorageSync('info') || [];
     this.setData({
       info:old
@@ -93,29 +94,32 @@ Page({
   },
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    var info=e.detail.value;
-    let old=wx.getStorageSync('info') || [];
-    
-    /*
-    var data= old.filter(function(e){
-      return e.itemname == info.itemname; 
-    })
-    console.log(data);
-    */
-   old[info.itemindex].sellamount+=info.amount;
+    var ret=e.detail.value;
+    let old=wx.getStorageSync('info') || [];//读取货架数据
+    let current_=wx.getStorageSync('current')||[];//读取流水记录
+
+   old[ret.itemindex].sellamount+=ret.amount;//通过选择器下标，修改出售数目
    /*
     for(var index in old){
-      if(old[index].itemname==info.itemname)
+      if(old[index].itemname==ret.itemname)
       {
        console.log(old[index]);
-       old[index].sellamount=info.amount;
+       old[index].sellamount=ret.amount;
        break;
       }
     }
     */
+   /**保存货架数据 */
     wx.setStorage({
       data: old,
       key: 'info',
+    })
+    /**记录流水 */
+    var c={itemname:old[ret.itemindex].itemname,sellamount:ret.amount,sell:ret.sell}//生成一条流水记录
+    current_.push(c)
+    wx.setStorage({
+      data: current_,
+      key: 'current',
     })
   },
   formReset: function () {
