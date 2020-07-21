@@ -21,7 +21,7 @@
   margin-right: 5%;
   padding: 5%;
 }
-page {
+.page {
   
   height: 100%;
   font-size: 32rpx;
