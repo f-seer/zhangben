@@ -30,18 +30,20 @@ Page({
       Index: e.detail.value
     })
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    /**为选择器读取数据 */
+  showData:function(){
     var old=wx.getStorageSync('info') || [];
     this.setData({
       info:old
       
     })
     console.log(old);
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    /**为选择器读取数据 */
+    this.showData();
   },
 
   /**
@@ -55,7 +57,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.showData();
   },
 
   /**
