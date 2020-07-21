@@ -79,6 +79,11 @@ Page({
     wx.navigateBack({
       delta: 0,
     })
+    wx.showToast({
+      title: '成功',
+      icon: 'success',
+      duration: 2000
+    })
   },
   formReset: function () {
     console.log('form发生了reset事件')

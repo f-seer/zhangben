@@ -39,6 +39,14 @@ Page({
     })
     console.log(old);
   },
+    nextAct:function(){
+      /**完成表单后续动作 */
+      wx.showToast({
+        title: '成功',
+        icon: 'success',
+        duration: 2000
+      })
+    },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -124,6 +132,7 @@ Page({
       data: current_,
       key: 'current',
     })
+    this.nextAct();
   },
   formReset: function () {
     console.log('form发生了reset事件')

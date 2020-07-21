@@ -1,6 +1,6 @@
 <!--pages/add/add.wxml-->
 <view class="page__hd">
-        <view class="page__title">账单</view>
+        <view class="page__title">收银台</view>
         <view class="page__desc">计账一条</view>
 </view>
       

@@ -50,8 +50,8 @@
           	</view>
         	</view>
         
-        <button style="margin:30rpx auto;" type="primary" formType="submit">Submit</button>
-        <button style="margin:30rpx auto;" formType="reset">Reset</button>
+        <button style="margin:30rpx auto;" type="primary" formType="submit">添加</button>
+        <button style="margin:30rpx auto;" type="default" formType="reset">重置</button>
       </form>
     </view>
 </view>
