@@ -31,6 +31,7 @@ Page({
     })
   },
   showData:function(){
+    /**为选择器读取数据 */
     var old=wx.getStorageSync('info') || [];
     this.setData({
       info:old
@@ -42,7 +43,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    /**为选择器读取数据 */
+    
     this.showData();
   },
 
