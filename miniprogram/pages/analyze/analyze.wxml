@@ -1,2 +1,6 @@
 <!--pages/analyze/analyze.wxml-->
-<text>pages/analyze/analyze.wxml</text>
+  <view class="page__hd">
+        <view class="page__title">分析</view>
+        <view class="page__desc">总营业额 {{sum}}</view>
+  </view>
+<view class="main" style="width: 600rpx;height:400rpx;" bindtap="chart_1"></view>
