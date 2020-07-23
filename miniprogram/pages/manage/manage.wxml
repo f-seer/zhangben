@@ -33,7 +33,7 @@
 					<view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_input">
             	<view class="weui-cell__bd" style="margin: 30rpx 0" >
-              	<input type="number" class="weui-input" name="purc" placeholder="输入数字" value="{{info[Index].purc}}" />
+              	<input type="digit" class="weui-input" name="purc" placeholder="输入数字" value="{{info[Index].purc}}" />
               </view>
           	</view>
         	</view>
@@ -41,7 +41,7 @@
 					<view class="weui-cells weui-cells_after-title">
             <view class="weui-cell weui-cell_input">
             	<view class="weui-cell__bd" style="margin: 30rpx 0" >
-              	<input type="number" class="weui-input" name="sell" placeholder="输入数字" value="{{info[Index].sell}}"/>
+              	<input type="digit" class="weui-input" name="sell" placeholder="输入数字" value="{{info[Index].sell}}"/>
               </view>
           	</view>
         	</view>
