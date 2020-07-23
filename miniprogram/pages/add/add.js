@@ -110,16 +110,7 @@ Page({
     let current_=wx.getStorageSync('current')||[];//读取流水记录
 
    old[ret.itemindex].sellamount+=ret.amount;//通过选择器下标，修改出售数目
-   /*
-    for(var index in old){
-      if(old[index].itemname==ret.itemname)
-      {
-       console.log(old[index]);
-       old[index].sellamount=ret.amount;
-       break;
-      }
-    }
-    */
+   
    /**保存货架数据 */
     wx.setStorage({
       data: old,

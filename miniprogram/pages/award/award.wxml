@@ -1,2 +1,11 @@
 <!--pages/award/award.wxml-->
-<text>pages/award/award.wxml</text>
+
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">成就</view>
+        <view class="page__desc">一面勋章墙</view>
+    </view>
+    <view class="page__bd">
+      
+    </view>
+</view>
