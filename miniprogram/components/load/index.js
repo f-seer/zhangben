@@ -1,5 +1,5 @@
 // components/load/index.js
-const goal_num = 10; // 目标值
+const goal_num = 30; // 目标值
 const load_num = 3; // 弹窗次数
 Component({
   /**
