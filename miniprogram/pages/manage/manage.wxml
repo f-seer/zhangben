@@ -1,0 +1,63 @@
+<!--pages/manage/manage.wxml-->
+
+<view class="page">
+  <view class="page__hd">
+        <view class="page__title">管理</view>
+        <view class="page__desc">修改和删除商品</view>
+  </view>
+<view class="store page__bd">
+      <form catchsubmit="formSubmit" catchreset="formReset">
+        <view class="page-section">
+          <view class="page-section-title">选择商品</view>
+          <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_select">
+                  <view class="weui-cell__bd">
+                      <picker name="itemindex" bindchange="bindPickerChange" value="{{Index}}" range="{{info}}" range-key="itemname">
+                          <view class="weui-select" >
+                            {{info[Index].itemname}}
+                          </view>
+                      </picker>
+                  </view>
+              </view>
+          </view>
+         
+					<view class="page-section-title">商品编号</view>
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+            	<view class="weui-cell__bd" style="margin: 30rpx 0" >
+              	<input type="number" class="weui-input" name="itemnum" placeholder="输入数字" value="{{info[Index].itemnum}}"/>
+              </view>
+          	</view>
+        	</view>
+					<view class="page-section-title">进货单价</view>
+					<view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+            	<view class="weui-cell__bd" style="margin: 30rpx 0" >
+              	<input type="number" class="weui-input" name="purc" placeholder="输入数字" value="{{info[Index].purc}}" />
+              </view>
+          	</view>
+        	</view>
+					<view class="page-section-title">默认售价</view>
+					<view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+            	<view class="weui-cell__bd" style="margin: 30rpx 0" >
+              	<input type="number" class="weui-input" name="sell" placeholder="输入数字" value="{{info[Index].sell}}"/>
+              </view>
+          	</view>
+        	</view>
+        </view>
+				<view class="page-section-title">进货数量</view>
+					<view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+            	<view class="weui-cell__bd" style="margin: 30rpx 0" >
+              	<input type="number" class="weui-input" name="pamount" placeholder="输入数字" value="{{info[Index].pamount}}"/>
+              </view>
+          	</view>
+        	</view>
+        
+        <button style="margin:30rpx auto;" type="primary" formType="submit">修改</button>
+        <button style="margin:30rpx auto;" type="warn" formType="reset">删除</button>
+      </form>
+      
+    </view>
+</view>

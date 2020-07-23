@@ -8,18 +8,14 @@
     "pages/Individual/Individual",
     "pages/index/index",
     "pages/add/add",
+    "pages/manage/manage",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room"
+    "pages/chooseLib/chooseLib"
+
   ],
   "tabBar": {
     "custom": false,
