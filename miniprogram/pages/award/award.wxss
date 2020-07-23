@@ -12,3 +12,9 @@
   font-size: medium;
   color:rgba(0, 0, 0, 0.6);
 }
+.page__bd{
+  align-items: center;
+}
+.test{
+  display: flex;
+}

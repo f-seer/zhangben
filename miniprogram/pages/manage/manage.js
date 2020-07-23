@@ -103,7 +103,7 @@ Page({
       delta: 0,
     })
     wx.showToast({
-      title: '成功',
+      title: '修改成功',
       icon: 'success',
       duration: 2000
     })

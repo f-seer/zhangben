@@ -17,13 +17,7 @@ App({
     }
     
     this.globalData = {
-      test:'333',
-      commodity:[{
-        "name":"a",
-        "amount":5,
-        "sell":2
-
-      }]
+     
       
 
     }

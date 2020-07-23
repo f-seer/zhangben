@@ -6,6 +6,22 @@
         <view class="page__desc">一面勋章墙</view>
     </view>
     <view class="page__bd">
-      
+      <view wx:if="{{!is_show_select}}">
+          <view class="test">
+            <image src="../../images/icon/1.svg"></image>
+            <image src="../../images/icon/2.svg"></image>
+            <image src="../../images/icon/3.svg"></image>
+          </view>
+          <text>很遗憾，销售额没有达到30，没有点亮销售冠军图标哦</text>
+        </view>
+
+        <view wx:else>
+          <view class="test">
+            <image src="../../images/icon/1_select.svg"></image>
+            <image src="../../images/icon/2.svg"></image>
+            <image src="../../images/icon/3.svg"></image>
+          </view>
+        </view>
+        <text>恭喜你，销售额达到30，成为本周的销量冠军</text>
     </view>
 </view>

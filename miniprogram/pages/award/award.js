@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    info:[],
+    is_show_select: false
+    
   },
   showData: function() {
     var Info =wx.getStorageSync('info');
@@ -18,6 +20,21 @@ Page({
    */
   onLoad: function (options) {
     this.showData()
+    wx.getStorage({
+      key: 'num',
+      success: res => {
+        if (res.data) {
+          this.setData({
+            is_show_select: true
+          })
+          console.log('恭喜你已达到成就，点亮图标')
+        }
+
+      },
+      fail:err=>{
+        console.log("你还没达到成就哦")
+      }
+    })
   },
 
   /**
@@ -52,7 +69,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.onLoad()
+    wx.stopPullDownRefresh()
   },
 
   /**

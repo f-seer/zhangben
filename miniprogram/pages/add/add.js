@@ -1,5 +1,6 @@
 // pages/add/add.js
 var app=getApp();
+
 Page({
   /**
    * 页面的初始数据
@@ -21,7 +22,8 @@ Page({
     plain: false,
     loading: false,
     Index:0,
-    info:[]
+    info:[],
+    sign: false
   },
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -124,8 +126,11 @@ Page({
       key: 'current',
     })
     this.nextAct();
+    this.selectComponent("#load").load();
   },
   formReset: function () {
     console.log('form发生了reset事件')
   }
+
+   
 })
