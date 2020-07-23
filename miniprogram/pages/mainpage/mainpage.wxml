@@ -5,9 +5,9 @@
         <view class="page__desc">商品信息</view>
   </view>
   <view class="page__bd">
-    <!--
-    <button bindtap="showData" type="default" class="btn">手动刷新</button>
-    -->
+    
+    <button bindtap="manage" type="default" class="btn">管理</button>
+    
     <button bindtap="gotosubmit" type="primary" class="btn">添加商品</button>
     <view wx:for="{{info}}" wx:for-item>
       <view class="item__bd">

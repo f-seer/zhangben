@@ -20,6 +20,7 @@ Page({
       info:Info
     })
  },
+
  /**
    * 生命周期函数--监听页面加载
    */
@@ -77,6 +78,11 @@ Page({
   gotosubmit: function(){
     wx.navigateTo({
       url: '../store/store',
+    })
+  },
+  manage:function(){
+    wx.navigateTo({
+      url: '../manage/manage',
     })
   }
 })
