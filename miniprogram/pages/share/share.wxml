@@ -1,2 +1,14 @@
 <!--pages/share/share.wxml-->
 <text>pages/share/share.wxml</text>
+<view wx:for="{{info}}" wx:for-item>
+      <view class="item__bd">
+        <view class="item__name">
+          品名{{item.itemname}}
+        </view>
+        <view class="item__info">
+            <text class="td">默认价格{{item.sell}}</text>
+        </view>
+      <text>\n</text>
+    </view>
+</view>
+<button open-type='share'>分享</button>

@@ -5,14 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    info:[]
   },
 
+  showData: function() {
+    var Info =wx.getStorageSync('info');
+    this.setData({
+      info:Info
+    })
+ },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.showData()
   },
 
   /**
@@ -26,7 +32,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.showData()
   },
 
   /**
