@@ -9,7 +9,7 @@
     <button bindtap="manage" type="default" class="btn">管理</button>
     
     <button bindtap="gotosubmit" type="primary" class="btn">添加商品</button>
-    <view wx:for="{{info}}" wx:for-item>
+    <view wx:for="{{info}}" wx:for-item wx:key="itemnum">
       <view class="item__bd">
         <view class="item__name">
           品名{{item.itemname}}
