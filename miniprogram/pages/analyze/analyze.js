@@ -6,13 +6,23 @@ Page({
    * 页面的初始数据 
    */ 
   data: { 
-    info:[{itemname: "显示名称", 
-    itemnum: "显示编号", 
-    pamount: "进货数量", 
-    purc: "进货价格", 
-    sell: "默认售价", 
-    sellamount: 1}], 
-    sum: 0 
+    info:[{itemname: "显示名称",
+    itemnum: "显示编号",
+    pamount: "进货数量",
+    purc: "进货价格",
+    sell: "默认售价",
+    sellamount: 1}],
+    sum: 0,
+    current:[{
+      itemname: "显示名称",
+      sellamount: "售出数量",
+      sell:"售价",
+    }],
+    total:[{
+      itemname: "显示名称",
+      sell:0
+    }]
+
   }, 
  
  
@@ -23,15 +33,7 @@ Page({
     this.setData({ 
       info:Info 
     }) 
-    var i=this.data.info.length-1; 
-    var s=0; 
-    for(i;i>=0;i--) 
-    { 
-      s+=this.data.info[i].sell*this.data.info[i].sellamount; 
-    } 
-    this.setData({ 
-      sum:s 
-    }) 
+    
  }, 
   /** 
    * 生命周期函数--监听页面加载 

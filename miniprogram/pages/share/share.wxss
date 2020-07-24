@@ -1,1 +1,36 @@
 /* pages/share/share.wxss */
+
+.item__bd{
+  width: 40%;
+  height: 140rpx;
+  background-color: white;
+  border-radius: 20px;
+  margin-left:5%;
+  margin-right: 5%;
+  margin-bottom: 20rpx;
+  float: left;
+  
+}
+.item__name{
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  background-color: blanchedalmond;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.item__info{
+  color: rgba(0, 0, 0, 0.6);
+  margin-left: 20rpx;
+}
+.td{
+  flex: 1;
+}
+ .title{
+  background-color: blanchedalmond;
+  text-align: center;
+ }
+ .content{
+   background-color: rgb(250, 250, 250);
+   text-align: center;
+ }

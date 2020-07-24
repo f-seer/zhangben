@@ -1,4 +1,5 @@
 // pages/share/share.js
+const app = getApp()
 Page({
 
   /**
@@ -68,5 +69,39 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  // pages/test/test.js
+//获取应用实例
+
+
+  data: {
+    name: '',
+    address: '',
+    latitude: '',
+    longitude: ''
+  },
+  getLocation: function () {
+    var _this = this;
+    wx.chooseLocation({
+      success: function (res) {
+        var name = res.name
+        var address = res.address
+        var latitude = res.latitude
+        var longitude = res.longitude
+        _this.setData({
+          name: name,
+          address: address,
+          latitude: latitude,
+          longitude: longitude
+        })
+      },
+      complete(r){
+        console.log(r)
+        console.log(222)
+      }
+    })
   }
+
+
 })

@@ -1,14 +1,32 @@
-<!--pages/share/share.wxml-->
-<text>pages/share/share.wxml</text>
+
+
+
+<button open-type='share' type="default">分享</button>
+<view>
+  <button bindtap='getLocation' type="primary">打开地图选择位置</button>
+  <text style="font-size: 26px;">我们的摊位在这里</text>
+  <view wx:if="{{address !=''}}">
+    
+    <view class="title">位置名称:</view>
+    <view class="content">{{name}}</view>
+    <view class="title">详细地址:</view>
+    <view class="content">{{address}}</view>
+    <view class="title">纬度:{{latitude}}</view>
+    <view class="content">经度:{{longitude}}</view>
+   
+  </view>
+</view>
+  <text style="font-size: 26px;">我们的商品</text>
+  <view style="float:none;width:100%;flex-direction:row-reverse;zoom:1;overflow:hidden;">
 <view wx:for="{{info}}" wx:for-item>
       <view class="item__bd">
-        <view class="item__name">
+        <view class="item__name"> 
           品名{{item.itemname}}
         </view>
         <view class="item__info">
-            <text class="td">默认价格{{item.sell}}</text>
+            <text class="td">默认价格:{{item.sell}}</text>
         </view>
       <text>\n</text>
     </view>
 </view>
-<button open-type='share'>分享</button>
+</view>
