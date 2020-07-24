@@ -23,6 +23,7 @@
       </view>
       <view>
         <button bindtap="share" type="primary">分享</button>
+        <button bindtap="about" style="margin-top:50rpx" type="default">关于</button>
       </view>
     
     </view>

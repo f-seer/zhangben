@@ -50,6 +50,12 @@ Page({
         url: '../share/share',
       })
     },
+    about:function(){ 
+      wx.navigateTo({ 
+        url: '../about/about', 
+      }) 
+    }, 
+
     showData: function() {
       var Info =wx.getStorageSync('info');
       this.setData({

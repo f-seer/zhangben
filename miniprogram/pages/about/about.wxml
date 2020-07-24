@@ -1,2 +1,2 @@
 <!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<button bindtap="resetData" type="warn">重置数据</button>

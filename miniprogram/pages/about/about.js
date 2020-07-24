@@ -7,6 +7,29 @@ Page({
   data: {
 
   },
+  resetData:function(){ 
+    wx.showModal({ 
+      title: '是否要重置所有数据', 
+      content: '此操作不可还原', 
+      success (res) { 
+        if (res.confirm) { 
+          console.log('用户点击确定') 
+          wx.clearStorage({ 
+            success: (res) => { 
+              wx.showToast({ 
+                title: '数据已清空', 
+                icon: 'success', 
+                duration: 2000 
+              }) 
+            }, 
+          }) 
+        } else if (res.cancel) { 
+          console.log('用户点击取消') 
+        } 
+      } 
+    }) 
+  }, 
+
 
   /**
    * 生命周期函数--监听页面加载
