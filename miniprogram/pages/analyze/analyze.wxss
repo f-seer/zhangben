@@ -12,3 +12,17 @@
   font-size: medium;
   color:rgba(0, 0, 0, 0.6);
 }
+.page_foot{
+  margin-bottom: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.foot__text{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgba(0, 0, 0, 0.6);
+
+}

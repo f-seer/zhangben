@@ -1,5 +1,118 @@
+import * as echarts from '../../ec-canvas/echarts';
 
- 
+function xiaoshoue(canvas,width,height,dpr)
+{
+  var info=wx.getStorageSync('info')
+  var current=wx.getStorageSync('current')
+  var total=wx.getStorageSync('info')
+  var i,j;
+  for(i=0;i<total.length;i++)
+  {
+    total[i].sellamount=0;
+    total[i].itemname=info[i].itemname;
+  }
+  for(i=0;i<current.length;i++)
+  {
+    for(j=0;j<info.length;j++)
+    {
+      if(total[j].itemname == current[i].itemname)
+      {
+        total[j].sellamount += Number(current[i].sell)*Number(current[i].sellamount);
+        continue;
+      }
+    }
+  }
+  var x=new Array();
+  var y=new Array();
+  for(i=0;i<total.length;i++)
+  {
+    x[i]=total[i].itemname;
+    y[i]=Number(total[i].sellamount);
+  }
+  const chart = echarts.init(canvas, null, {
+    width: width,
+    height: height,
+    devicePixelRatio: dpr // 像素
+  });
+  canvas.setChart(chart);
+
+  var option = {
+    title: {
+      text: '销售额'
+  },
+  tooltip: {},
+  legend: {
+      data:['销售额']
+  },
+  xAxis: {
+      data: x
+  },
+  yAxis: {},
+  series: [{
+      name: '销售额',
+      type: 'bar',
+      data: y,
+      type:"bar",
+      itemStyle:{
+        normal:{
+            color:'#6495ED'
+        }
+    },
+
+  }]
+  };
+  chart.setOption(option);
+  return chart;
+}
+
+
+function xiaoshouliang(canvas,width,height,dpr)
+{
+  var info=wx.getStorageSync('info')
+  var x=new Array();
+  var y=new Array();
+  var i;
+  for(i=0;i<info.length;i++)
+  {
+    x[i]=info[i].itemname;
+    y[i]=info[i].sellamount;
+  }
+
+  const chart = echarts.init(canvas, null, {
+    width: width,
+    height: height,
+    devicePixelRatio: dpr // 像素
+  });
+  canvas.setChart(chart);
+
+  var option = {
+    title: {
+      text: '销量'
+  },
+  tooltip: {},
+  legend: {
+      data:['销量']
+  },
+  xAxis: {
+      data: x
+  },
+  yAxis: {},
+  series: [{
+      name: '销量',
+      type: 'bar',
+      data: y,
+      type:"bar",
+      itemStyle:{
+        normal:{
+            color:'#98FB98'
+        }
+    },
+  }]
+  };
+  chart.setOption(option);
+  return chart;
+}
+
 Page({ 
  
   /** 
@@ -16,12 +129,15 @@ Page({
     current:[{
       itemname: "显示名称",
       sellamount: "售出数量",
-      sell:"售价",
+      sell:0,
     }],
-    total:[{
-      itemname: "显示名称",
-      sell:0
-    }]
+    xiaoshoue:{
+      onInit:xiaoshoue
+    },
+    xiaoshouliang:{
+      onInit:xiaoshouliang
+    }
+
 
   }, 
  
@@ -33,7 +149,24 @@ Page({
     this.setData({ 
       info:Info 
     }) 
+    var Current=wx.getStorageSync('current');
+    this.setData({
+      current:Current
+    })
+    var i;
+    var s=0;
+    for(i=0;i<this.data.info.length;i++)
+    {
+      s-=this.data.info[i].purc*this.data.info[i].pamount;
+    }
     
+    for(i=0;i<this.data.current.length;i++)
+    {
+      s+=this.data.current[i].sell*this.data.current[i].sellamount
+    }
+    this.setData({
+      sum:s
+    })
  }, 
   /** 
    * 生命周期函数--监听页面加载 
@@ -92,32 +225,5 @@ Page({
   }, 
    
  
-  chart_1:function(){ 
-        // 基于准备好的dom，初始化echarts实例 
-        var myChart = echarts.init(document.getElementById('main')); 
- 
-        // 指定图表的配置项和数据 
-        var option = { 
-            title: { 
-                text: '销量统计表' 
-            }, 
-            tooltip: {}, 
-            legend: { 
-                data:['销量'] 
-            }, 
-            xAxis: { 
-                data: this.data.info.itemname 
-            }, 
-            yAxis: {}, 
-            series: [{ 
-                name: '销量', 
-                type: 'bar', 
-                data: this.data.info.pamount 
-            }] 
-        }; 
- 
-        // 使用刚指定的配置项和数据显示图表。 
-        myChart.setOption(option); 
-      } 
  
 })

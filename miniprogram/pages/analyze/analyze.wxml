@@ -3,4 +3,18 @@
         <view class="page__title">分析</view>
         <view class="page__desc">总营业额 {{sum}}</view>
   </view>
-<view class="main" style="width: 600rpx;height:400rpx;" bindtap="chart_1"></view>
+<view class="main" style="width: 95%;height:500rpx;">
+<ec-canvas id="xiaoshoue" canvas-id="xiaoshoue" ec="{{ xiaoshoue }}"></ec-canvas>
+</view>
+<view class="main" style="width:95%;height:500rpx;">
+<ec-canvas id="xiaoshouliang" canvas-id="xiaoshouliang" ec="{{ xiaoshouliang }}"></ec-canvas>
+</view>
+<view class="page__foot">
+<text class="foot__text"> __销售记录__</text>
+</view>
+<view wx:for="{{current}}" wx:for-item>
+<view style="width:95%;height:50rpx;">
+<text style="color:rgba(0, 0, 0, 0.6);">商品：{{item.itemname}}，销量：{{item.sellamount}}，销售价格：{{item.sell}}。</text>
+</view>
+</view>
+
